@@ -32,7 +32,7 @@ exports.lin_to_db2 = function(image) {
 // Prepare ratio band for linear image
 //---------------------------------------------------------------------------//
 exports.add_ratio_lin = function(image){
-      var ratio = image.addBands(image.select('VV').divide(image.select('VH')).rename('VVVH_ratio'));
+      var ratio = image.addBands(image.select('VH').divide(image.select('VV')).rename('VHVV_ratio'));
       return ratio.set('system:time_start', image.get('system:time_start'))
   }
 
